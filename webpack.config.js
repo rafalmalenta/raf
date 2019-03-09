@@ -1,5 +1,5 @@
-//var debug = process.env.NODE_ENV !== "production";
-//const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+var debug = process.env.NODE_ENV !== "production";
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
@@ -26,7 +26,7 @@ module.exports = {
         	exclude: /(node_modules|bower_components)/,
         	loader: 'babel-loader',
         	query: {
-        		presets: ['react','es2015', 'stage-0']
+        		presets: ['es2015', 'stage-0']
         	}
       		},
       		{

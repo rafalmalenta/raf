@@ -1,77 +1,82 @@
-
-@mixin box-sizing($box-model) 
-  box-sizing: $box-model 
-  -webkit-box-sizing: $box-model // Safari <= 5
-  -moz-box-sizing: $box-model // Firefox <= 19
-   box-sizing: $box-model
-
-@media all and (orientation: landscape)
-    #app
-        margin-top: 5vh
-        margin-left: 10vh 
-    .TTT--row
-        width: 60vh
-        height: 20vh
-               
-    .TTT--col
-        width: 20vh
-        height: 20vh 
-        background-color: yellow  
-            
-        
-
-@media all and (orientation: portrait)
-    #app
-        margin-left: 20vw
-        margin-top: 11vw
-    .TTT--row
-        width: 69vw
-        //height: 22vw        
-    .TTT--col
-        width: 23vw
-        height: 23vw
-        background-color: silver
-              
-
-body 
+.menu * a
+    text-decoration: none
+    color: inherit
+    position: relative
+    margin-right: 44px
+    top: 1em 
+.menu a
+    text-decoration: none
+    color: inherit
+    position: relative
+    margin-right: 44px
+    top: 1em
+.menu--label
+    margin-left: 50px
+.onlyonlowres
+        display: none
+body
+    margin: 0px
+    margin-top: 4em
     width: 100%
-    height: 100%
-    padding: 0px 
-    margin: 0px 0px auto
+    overflow-x: hidden
     position: absolute
-    @include box-sizing(border-box)
-    overflow: hidden
-        
+  
+.menu
+    color: black
+    //text-shadow: 4px 4px #aaaaaa
+    top: 0px 
+    position: fixed
+    width: 100%
+    text-align: right
+    font-size: 3em
+    height: 3em
+    z-index: 1
+    //display: inline
+    background-color: #aaa
 
-.TTT
+
+       
+.block
+    height: 40em
+    width: 100%
+    padding: 10%
+
+.menu--label
     position: relative
-    margin: 0 auto
-            
-
-.TTT--col 
-    overflow: hidden
-    font-size: 75px
-    padding: 0px auto
+    left: 0px
     float: left
-    opacity: 0.7
-    border: 2px solid grey
+.menu--button
     position: relative
-    @include box-sizing(border-box)
     
+.active
+    border-bottom: 5px solid #333
 
-#app
-    @include box-sizing(border-box)
+
+
+
+@media screen and (max-width: 1000px)
+    .menu * .menu--btn
+        font-size: 1em
+        display: block
+        width: 100%
+        margin: 0px 0px 0px 0px
+        left: 0px
+        right: 0px
+        padding: 0px 0px 0px 0px
+        top: 0px
+        height: 1em
+        text-align: center
+        float: none
+        //border: 1px red solid
+
+    .menu
+        height: 4em
+        margin: 0px 0px 0px 0px
+        padding: 0px 0px 0px 0px
+        background-color: #eee
+    .onlyonlowres
+        display: block
+    .menu > .menu--label
+        display: none
     
-.TTT--col div
-    width: 50px
-    height: 1em
-    margin: auto  
-    position: absolute
-    left: 0
-    right: 0
-    top: 0
-    bottom: 0
-button
-    width: 150px
-    height: 50px    
     
