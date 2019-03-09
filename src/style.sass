@@ -1,45 +1,42 @@
-.menu * a
-    text-decoration: none
-    color: inherit
-    position: relative
-    margin-right: 44px
-    top: 1em 
 .menu a
     text-decoration: none
     color: inherit
     position: relative
     margin-right: 44px
-    top: 1em
+    
+
 .menu--label
     margin-left: 50px
+
 .onlyonlowres
-        display: none
+    display: none
 body
     margin: 0px
-    margin-top: 4em
+    margin-top: 40px
     width: 100%
     overflow-x: hidden
     position: absolute
   
 .menu
-    color: black
-    //text-shadow: 4px 4px #aaaaaa
     top: 0px 
     position: fixed
     width: 100%
     text-align: right
-    font-size: 3em
-    height: 3em
+    font-size: 40px
     z-index: 1
-    //display: inline
-    background-color: #aaa
-
-
+    background-image: linear-gradient(#11eeee, #bbeeee, #11eeee)
+    padding-top: 10px
+    padding-bottom: 10px
+    text-shadow: 3px 3px #ffffff
+    
        
 .block
+    display: block !important
     height: 40em
     width: 100%
-    padding: 10%
+    margin-top: 30px
+    padding-right: 10%
+    padding-left: 10%
 
 .menu--label
     position: relative
@@ -50,13 +47,22 @@ body
     
 .active
     border-bottom: 5px solid #333
+    color: #aa4444 !important
+
+
+.menu--colapser
+    list-style-type: none
+    display: inline
+
+.menu--colapser > li
+    display: inline
 
 
 
 
 @media screen and (max-width: 1000px)
-    .menu * .menu--btn
-        font-size: 1em
+    .menu * //.menu--btn
+        //font-size: 1em
         display: block
         width: 100%
         margin: 0px 0px 0px 0px
@@ -64,19 +70,23 @@ body
         right: 0px
         padding: 0px 0px 0px 0px
         top: 0px
-        height: 1em
         text-align: center
         float: none
-        //border: 1px red solid
+        font-weight: 444
+        text-shadow: 2px 2px #ffffff
 
     .menu
-        height: 4em
         margin: 0px 0px 0px 0px
         padding: 0px 0px 0px 0px
-        background-color: #eee
+        
     .onlyonlowres
         display: block
+        padding: 0px 0px 0px 0px
+        margin: 0px 0px 0px 0px
+        text-align: center
+        width: 100%
     .menu > .menu--label
         display: none
-    
+    .menu > .colapsed > .menu--colapser___btn
+        display: none
     

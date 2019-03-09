@@ -1,10 +1,10 @@
 import "./style.sass";
-
+//import $ from "jquery";
 var cacheDOM = (function(){
 	var blocks = document.getElementsByClassName("block");
 	blocks = [ ...blocks ];
 	var menu = document.getElementsByClassName("menu");
-	var colapser = document.getElementsByClassName("colapser");
+	var colapser = document.getElementsByClassName("menu--colapser");
 	return{
 		menu: menu,
 		blocks: blocks,
@@ -33,7 +33,7 @@ var scrollspy = function(){
 	console.log("sasa")
 
 	for( var i=2; i>=0; i-- ){
-		if(blocks[i].offsetTop < window.scrollY+10){
+		if(blocks[i].offsetTop < window.scrollY){
 			document.querySelector('a[href*=' + blocks[i].id + ']').classList.add("active");
 			console.log("addded");
 			return;
@@ -50,14 +50,12 @@ var menu = document.getElementsByClassName("menu");
 setTimeout(function(){
 	var tohide = document.getElementsByClassName("menu--label__hide");
 	var arr = [ ...tohide ];
-	var tolower = document.getElementById("tolower");
+	var tolower = document.getElementById("menu--label__tolower");
 	tolower.innerHTML = "m";
 	arr.forEach(function(x){
 		x.style.display="none";	
 	});
 },3300)
-var lastscrollY = 1333333333;
-//var buttons = [ ...document.getElementsByTagName("a")];
 
 function menuToggle(){
 	console.log(cacheDOM.colapser[0].classList.contains('colapsed'));
