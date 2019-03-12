@@ -19,14 +19,46 @@
     <li class="menu--colapser___btn"><a href="#osobie">O mnie</a></li>
     <li class="menu--colapser___btn"><a href="#portfolio">Portfolio</a></li>
     <li class="menu--colapser___btn"><a href="#kontakt">Kontakt</a></li>
-    <a id="menu-toggle">Menu</a>
-  </div>
+    <li id="menu-toggle" class="onlyonlowres"><a >Menu</a></li>
+  </ul>
+  
 </nav>
 
-<div class="block" id="osobie">ssdsaa</div>
-<div class="block" id="portfolio">s</div>
-<div class="block" id="kontakt">ss</div>
-<div class="block" id="stopka">vz</div>
+<div class="block" id="osobie">
+  <p>
+    Cześć, Jestem Rafał.
+  </p>  
+  <p>
+    Jakiś czas temu postanowiłem zostać web developerem. Korzystając z tutoriali, różnego rodzaju kursów oraz oficjalnej dokumentacji
+    uczę się wszystkiego co jest niezbędne do osiągnięcia tego celu, do tej pory poznałem podstawy poniższych technoligii
+  </p>
+  <div class="block--karuzela" id="scena">
+   
+  </div>
+  <p id="value">
+
+  </p>
+</div>
+<div class="block" id="portfolio">Na obecną chwilę moje portfolio to strona którą oglądasz oraz gra kółko i krzyżyk dostępna  
+  <a href="http://ttt.rafalmalenta.usermd.net">tutaj</a>
+</div>
+
+<div class="block" id="kontakt">
+  <form action="" name="formularz" method="GET" id="form" >
+    <div class="row">
+      <label class="inrow"><input type="text" id="imie" name="imie" placeholder="Imię"></label>
+      <label class="inrow"><input type="text" id="nazwisko" name="nazwisko" placeholder="Nazwisko"></label>
+    </div>
+    <div class="row">
+      <label class="inrow"><input type="text" id="telefon" name="telefon" placeholder="numer telefonu"></label>
+      <label class="inrow"><input type="text" id="email" name="mail" placeholder="adres e-mail"></label>
+    </div>
+    
+    <label class="row"><textarea rows="3" id="wiadomosc" name="wiadomos" placeholder="Co tam?"></textarea></label>
+    <button type="submit" >Wyślij</button>
+  </form>
+</div>
+<div class="block" id="stopka"></div>
   
 
 <script src="./scripts.min.js"></script>

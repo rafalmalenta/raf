@@ -1,0 +1,48 @@
+=transform($property)
+    transform: $property
+    -webkit-transform: $property
+    -ms-transform: $property
+    
+
+=transition($property)
+    -webkit-transition: $property
+    -ms-transition: $property
+    transition: $property
+
+=perspective-origin($prop)
+    -webkit-perspective-origin: $prop
+    -ms-perspective-origin: $prop
+    perspective-origin: $prop
+
+.block--karuzela
+    +perspective-origin(50% 40%)
+    position: relative
+    perspective: 500px
+    width: 100%
+    height: 300px
+    transform: rotateY(0deg)   
+    transform-style: preserve-3d
+    transition: all 2s
+    
+
+.block--karuzela>div
+    width: 112px
+    height: 30px
+    margin: auto
+    position: absolute
+    top: 0
+    bottom: 0 
+    left: 0
+    right: 0 
+    max-width: 100%
+    max-height: 100%
+    font-size: 31px
+    text-align: center
+    transition: all 2s
+
+.block--karuzela div
+    font-weight: bold
+    text-shadow: 2px 2px #aaffaa
+
+.block #value
+    height: 3em

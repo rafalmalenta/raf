@@ -1,3 +1,6 @@
+@import ./karuzela 
+@import ./form
+
 .menu a
     text-decoration: none
     color: inherit
@@ -8,10 +11,10 @@
 .menu--label
     margin-left: 50px
 
-.onlyonlowres
-    display: none
+#menu-toggle.onlyonlowres
+    display: none 
 body
-    margin: 0px
+    margin: 0px    
     margin-top: 40px
     width: 100%
     overflow-x: hidden
@@ -22,21 +25,25 @@ body
     position: fixed
     width: 100%
     text-align: right
-    font-size: 40px
+    font-size: 44px
     z-index: 1
-    background-image: linear-gradient(#11eeee, #bbeeee, #11eeee)
+    background-image: linear-gradient(#ffffff,  #11eeee,  #ffffff)
     padding-top: 10px
     padding-bottom: 10px
     text-shadow: 3px 3px #ffffff
+    transition: all 1s
+    
     
        
 .block
+    position: relative
     display: block !important
-    height: 40em
-    width: 100%
-    margin-top: 30px
-    padding-right: 10%
-    padding-left: 10%
+    //float: left
+    min-height: 10em
+    width: 80%
+    margin: 0px auto
+    margin-top: 30px   
+    font-size: 26px
 
 .menu--label
     position: relative
@@ -44,10 +51,11 @@ body
     float: left
 .menu--button
     position: relative
+    display: block
+    float: none
     
 .active
-    border-bottom: 5px solid #333
-    color: #aa4444 !important
+    color: #1144cc !important
 
 
 .menu--colapser
@@ -58,33 +66,34 @@ body
     display: inline
 
 
-
-
 @media screen and (max-width: 1000px)
-    .menu * //.menu--btn
-        //font-size: 1em
-        display: block
-        width: 100%
-        margin: 0px 0px 0px 0px
+    .menu * 
+        display: block        
+        margin: 0px 0px 0px 0px !important
         left: 0px
         right: 0px
         padding: 0px 0px 0px 0px
         top: 0px
         text-align: center
-        float: none
-        font-weight: 444
+        float: none        
         text-shadow: 2px 2px #ffffff
+        
+    body .block
+        padding-right: 5%
+        padding-left: 5%
 
     .menu
         margin: 0px 0px 0px 0px
         padding: 0px 0px 0px 0px
         
     .onlyonlowres
-        display: block
+        display: block !important
         padding: 0px 0px 0px 0px
         margin: 0px 0px 0px 0px
         text-align: center
         width: 100%
+    .block
+        margin-top: 150px
     .menu > .menu--label
         display: none
     .menu > .colapsed > .menu--colapser___btn
