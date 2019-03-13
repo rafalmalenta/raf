@@ -5,8 +5,7 @@
     text-decoration: none
     color: inherit
     position: relative
-    margin-right: 44px
-    
+    margin-right: 44px   
 
 .menu--label
     margin-left: 50px
@@ -18,8 +17,13 @@ body
     margin-top: 40px
     width: 100%
     overflow-x: hidden
-    position: absolute
-  
+    position: absolute    
+    box-sizing: border-box
+    
+
+body *
+    box-sizing: border-box
+
 .menu
     top: 0px 
     position: fixed
@@ -32,18 +36,27 @@ body
     padding-bottom: 10px
     text-shadow: 3px 3px #ffffff
     transition: all 1s
-    
-    
+   
        
 .block
     position: relative
     display: block !important
-    //float: left
-    min-height: 10em
-    width: 80%
-    margin: 0px auto
-    margin-top: 30px   
-    font-size: 26px
+    width: 100%
+    margin: 0px auto    
+    font-size: 26px 
+
+.block > *
+    margin-left: 10%
+    margin-right: 10%
+
+
+
+.block::after
+    content: ""
+    display: block
+    height: 40px
+    background-image: linear-gradient(#ffffff,  #11eeee,  #ffffff)
+
 
 .menu--label
     position: relative
@@ -78,9 +91,11 @@ body
         float: none        
         text-shadow: 2px 2px #ffffff
         
-    body .block
-        padding-right: 5%
-        padding-left: 5%
+    .block >*
+        padding-right: 0%
+        padding-left: 0%
+        margin-left: 5%
+        margin-right: 5%
 
     .menu
         margin: 0px 0px 0px 0px
@@ -92,10 +107,22 @@ body
         margin: 0px 0px 0px 0px
         text-align: center
         width: 100%
-    .block
+    body
         margin-top: 150px
     .menu > .menu--label
         display: none
     .menu > .colapsed > .menu--colapser___btn
         display: none
     
+.block a        
+    margin-left: 0%
+    margin-right: 0%
+    display: block  
+    float: left  
+    position: relative
+    text-decoration: none
+    width: 50%
+        
+
+#stopka p
+    text-align: center

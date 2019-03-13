@@ -192,3 +192,11 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 document.getElementById("form").addEventListener("submit", function(event){
 	event.preventDefault();
 });
+
+
+(function(){
+	var x = new Date(); 
+	var xx=x.getFullYear();
+	document.getElementById("stopa").innerText = "Rafał Malenta "+xx;
+
+})();
