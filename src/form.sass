@@ -1,21 +1,12 @@
 @media screen and (max-width: 2700px)
-    .row label.inrow 
+    label.inrow 
+        width: 50%
         float: left
-        width: 50%   
-    .row::after
-        clear: both
-        content: ""
-        height: 1px
-    label.inrow::after
-        clear: both
-        content: ""
-    input::after
-        clear: both
-        content: ""
+
     
     
 @media screen and (max-width: 700px)
-    .row label.inrow
+    label.inrow
         width: 100%       
         display: block
         position: relative
@@ -29,17 +20,12 @@ form
     position: relative  
     margin-bottom: 63px
     margin-top: 50px
-    
-.row    
-    margin: 0px 0px 0px 0px
-    position: relative  
-    //height: 3em
-    box-sizing: border-box
-    //padding: 5px 5px 5px 5px
-    vertical-align: middle
 
-.row label.inrow
-    
+label.row 
+    float: left
+    width: 100%
+ 
+label    
     display: block
     position: relative
     height: 3em
@@ -51,7 +37,7 @@ form
         box-sizing: border-box
         border-radius: 15px
         background-color: #aaffff
-    
+
 
 textarea
     box-sizing: border-box
@@ -74,15 +60,13 @@ form button
     padding: 10px 10px 10px 10px
     width: 15em
 
-input[type="text"]
-    
-    width: 100%
-    padding: 0px 0px 0px 0px
-    margin: 0px 0px 0px 0px
 
 form input 
     font-size: 1em
 button
     
-
+form 
+    label
+        padding-left: 2%
+        padding-right: 2%
 

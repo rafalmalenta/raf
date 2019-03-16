@@ -108,7 +108,8 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 		translation :{},
 		items : [],
 		radius: 110,
-		angle : null,
+		angle : 0,
+		rotationAngle: 0,
 		HTML : "",
 		opis: document.getElementById("value"),
 		
@@ -143,19 +144,24 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 		rotate: function(degAngle){
 			var divsToTranslate = [ ...scena.getElementsByTagName("div")];
 			var newdegAngle, newradAngle;
-						
+			this.rotationAngle = degAngle;			
 			divsToTranslate.forEach((x,key)=>{				
 				newdegAngle = x.getAttribute("data-angle") - degAngle;
+
 				newradAngle = (newdegAngle*2*Math.PI)/360;
 				this.translation.X = Math.sin(newradAngle).toFixed(1) * this.radius * 2;
 				this.translation.Z = Math.cos(newradAngle).toFixed(1) * this.radius ;
 				x.setAttribute("style","transform:translateX("+this.translation.X+"px)translateZ("+this.translation.Z+"px)");
 				//x.addAttribute("style","-webkit-transform:translateX("+Translation.X+"px)translateZ("+Translation.Z+"px)");
 				//x.addAttribute("style","-ms-webkit-transform:translateX("+Translation.X+"px)translateZ("+Translation.Z+"px)");
+				console.log(newdegAngle);
 				if(newdegAngle == 0){
 					this.opis.innerHTML = items[key].content;
 				};
 			});
+		},
+		curentRotationAngle: function(){
+			return this.rotationAngle;
 		},
 		
 		
@@ -163,24 +169,20 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 	karuzela.set(items);
 	karuzela.init();
 	
-	addEventListener("click",function(event){
+	document.getElementById("scena").addEventListener("click",function(event){
 		event.stopPropagation();
 		var degAngle = parseInt(event.target.getAttribute("data-angle"));
 		if(!isNaN(degAngle)){
 			karuzela.rotate(degAngle);
 		};
 	});
-	var step = 360/karuzela.items.length;
-	var iteration = 0;
-	setInterval(function(){
-		if(iteration < karuzela.items.length-1)
-			iteration += 1;
-		else iteration = 0;
-		
-		karuzela.rotate(iteration*step);
-	},5130);	
 
+	var step = 360/karuzela.items.length;
 	
+	setInterval(function(){
+		var curAngle = karuzela.curentRotationAngle();		
+		karuzela.rotate(curAngle+step);
+	},5130);	
 })();
 
 document.getElementById("form").addEventListener("submit", function(event){
