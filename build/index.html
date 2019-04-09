@@ -71,21 +71,33 @@
 </div>
 
 <div class="block" id="kontakt">
-  <form action="" name="formularz" method="GET" id="form" >
-      <p>Napisz do mnie</p>
-     <label class="inrow"><input type="text" id="imie" name="imie" placeholder="Imię"></label>
-     <label class="inrow"><input type="text" id="nazwisko" name="nazwisko" placeholder="Nazwisko"></label>
-     <label class="inrow"><input type="text" id="telefon" name="telefon" placeholder="numer telefonu"></label>
-     <label class="inrow"><input type="text" id="email" name="mail" placeholder="adres e-mail"></label>      
-     <label class="row">        
-      <textarea rows="3" id="wiadomosc" name="wiadomos" placeholder="Co tam?"></textarea>
-    </label>
+  <h3>Kontakt</h3>
+  <div class="half">
+    <p>zadzwoń</p>
+    <p>726-767-033</p>
+  </div>
+  <div class="half"> 
+    <p>napisz do mnie maila</p>
+    <p><a href="mailto:rmalenta@wp.pl">rmalenta@wp.pl</a></p>
+  </div>
+  <div id="formWrapper">
+      <form action="" name="formularz" method="GET" id="form" >
+          <p>lub wyślij formularz</p>
+         <label class="inrow"><input type="text" id="imie" name="imie" placeholder="Imię"></label>
+         <label class="inrow"><input type="text" id="nazwisko" name="nazwisko" placeholder="Nazwisko"></label>
+         <label class="inrow"><input type="text" id="telefon" name="telefon" placeholder="numer telefonu"></label>
+         <label class="inrow"><input type="text" id="email" name="mail" placeholder="adres e-mail"></label>      
+         <label class="row">        
+          <textarea rows="3" id="wiadomosc" name="wiadomosc" placeholder="Co tam?"></textarea>
+        </label>
+      
+        <button type="submit" >Wyślij</button>
+      </form>
+  </div>
   
-    <button type="submit" >Wyślij</button>
-  </form>
 </div>
 <div class="block" id="stopka">
-  
+  <!-- pasowałoby tutaj dołożyć 2 dodatkowe kafelki zeby sie ładniej łamało -->
   <p id="stopa"></p>
     <a href="https://github.com/rafalmalenta">
       <img src="./img/gimp.png" ></img>
