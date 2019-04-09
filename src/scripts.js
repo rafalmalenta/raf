@@ -162,9 +162,10 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 				x.setAttribute("style","transform:translateX("+this.translation.X+"px)translateZ("+this.translation.Z+"px)");
 				//x.addAttribute("style","-webkit-transform:translateX("+Translation.X+"px)translateZ("+Translation.Z+"px)");
 				//x.addAttribute("style","-ms-webkit-transform:translateX("+Translation.X+"px)translateZ("+Translation.Z+"px)");
-				//console.log(newdegAngle);
 				if(newdegAngle == 0){
 					this.opis.innerHTML = items[key].content;
+					divsToTranslate[key].style.color="red";
+					divsToTranslate[key].style.weight="bold"
 				};
 			});
 		},
@@ -188,8 +189,7 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 	var step = 360/karuzela.items.length;
 	
 	setInterval(function(){
-		var curAngle = karuzela.curentRotationAngle();	
-		console.log(curAngle+step);	
+		var curAngle = karuzela.curentRotationAngle();		
 		karuzela.rotate(curAngle+step);
 	},2130);	
 })();
