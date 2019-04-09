@@ -100,6 +100,12 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 		{
 			id:8,header:"Socket.io",content:"To narzędzie usprawnia prace z websockets tworząc bezposrednie połączenie klient-serwer"+
 			" umożliwiając bezpośrednią wymianę informacji"
+		},
+		{
+			id:9,header:"VSC", content:"Visual Studio Code rozbudowany i darmowy edytor kodu."
+		},
+		{
+			id:10,header:"SQL", content:"Język zapytań dla baz danych"
 		}
 
 	];
@@ -144,17 +150,20 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 		rotate: function(degAngle){
 			var divsToTranslate = [ ...scena.getElementsByTagName("div")];
 			var newdegAngle, newradAngle;
+			if(degAngle >= 360){
+				degAngle=degAngle-360;
+			}
 			this.rotationAngle = degAngle;			
 			divsToTranslate.forEach((x,key)=>{				
 				newdegAngle = x.getAttribute("data-angle") - degAngle;
-
+				//if(newdegAngle<= -360)newdegAngle = 0;
 				newradAngle = (newdegAngle*2*Math.PI)/360;
 				this.translation.X = Math.sin(newradAngle).toFixed(1) * this.radius * 2;
 				this.translation.Z = Math.cos(newradAngle).toFixed(1) * this.radius ;
 				x.setAttribute("style","transform:translateX("+this.translation.X+"px)translateZ("+this.translation.Z+"px)");
 				//x.addAttribute("style","-webkit-transform:translateX("+Translation.X+"px)translateZ("+Translation.Z+"px)");
 				//x.addAttribute("style","-ms-webkit-transform:translateX("+Translation.X+"px)translateZ("+Translation.Z+"px)");
-				console.log(newdegAngle);
+				//console.log(newdegAngle);
 				if(newdegAngle == 0){
 					this.opis.innerHTML = items[key].content;
 				};
@@ -180,9 +189,10 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 	var step = 360/karuzela.items.length;
 	
 	setInterval(function(){
-		var curAngle = karuzela.curentRotationAngle();		
+		var curAngle = karuzela.curentRotationAngle();	
+		console.log(curAngle+step);	
 		karuzela.rotate(curAngle+step);
-	},5130);	
+	},2130);	
 })();
 
 document.getElementById("form").addEventListener("submit", function(event){
