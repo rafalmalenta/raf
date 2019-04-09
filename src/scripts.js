@@ -1,4 +1,4 @@
-import "./style.sass";
+import "./style/style.sass";
 
 var cacheDOM = (function(){
 	var blocks = document.getElementsByClassName("block");
@@ -156,7 +156,6 @@ document.getElementById("menu-toggle").addEventListener("click", menuToggle);
 			this.rotationAngle = degAngle;			
 			divsToTranslate.forEach((x,key)=>{				
 				newdegAngle = x.getAttribute("data-angle") - degAngle;
-				//if(newdegAngle<= -360)newdegAngle = 0;
 				newradAngle = (newdegAngle*2*Math.PI)/360;
 				this.translation.X = Math.sin(newradAngle).toFixed(1) * this.radius * 2;
 				this.translation.Z = Math.cos(newradAngle).toFixed(1) * this.radius ;
